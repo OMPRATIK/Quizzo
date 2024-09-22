@@ -57,8 +57,11 @@ function LeaderBoard({ points, user, setUser }: lbInterface) {
           {getTopK(users, k).map((u: User, idx: number) => {
             return (
               <li key={idx} className={`${user.name === u.name && styles.you}`}>
-                <span>{idx + 1}</span>
-                {u.name}
+                <div>
+                  <span>{idx + 1}</span>
+                  {u.name}
+                  {`(${u.points})`}
+                </div>
                 {getMedalEmoji(idx)}
               </li>
             );

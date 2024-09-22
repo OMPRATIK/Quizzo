@@ -8,6 +8,7 @@ interface UserProp {
   setUser: React.Dispatch<React.SetStateAction<User>>;
   setPoints: React.Dispatch<React.SetStateAction<number>>;
 }
+
 function Header({ user, setUser, setPoints }: UserProp) {
   const navigate = useNavigate();
 

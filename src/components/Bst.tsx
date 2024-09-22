@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Bst.module.css";
 import Button from "./Button";
 import { User } from "./context";
@@ -25,11 +25,15 @@ function Bst({ questions, setUser, setPoints, user }: bstProp) {
   const [curr, setCurr] = useState<Node | null>(root);
   const [answer, setAnswer] = useState<string | null>(null);
   let isCorrect = false;
-  const ansMap = new Map();
 
-  questions.forEach((q) => {
-    ansMap.set(q.question, q.correct);
-  });
+  const [ansMap, setAnsMap] = useState(new Map());
+  useEffect(() => {
+    const tempMap = new Map();
+    questions.forEach((q) => {
+      tempMap.set(q.question, q.correct);
+    });
+    setAnsMap(tempMap);
+  }, []);
 
   return curr === null ? (
     <Complted setPoints={setPoints} />

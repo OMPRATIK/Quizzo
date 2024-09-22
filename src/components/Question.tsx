@@ -25,7 +25,6 @@ function Question({ questions, setPoints, setUser, user, mode }: questionProp) {
   const [idx, setIdx] = useState(0);
   const [answer, setAnswer] = useState<string | null>(null);
   const ansMap = new Map();
-
   questions.forEach((q, idx) => {
     ansMap.set(idx, q.correct);
   });

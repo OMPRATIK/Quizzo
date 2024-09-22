@@ -18,6 +18,11 @@
   /* gap: 1.2rem; */
 }
 
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .list li:last-child {
   border: none;
 }
