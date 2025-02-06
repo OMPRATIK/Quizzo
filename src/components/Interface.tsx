@@ -3,10 +3,17 @@ import Question from "./Question";
 import styles from "./Interface.module.css";
 import Header from "./Header";
 
-import { question, User } from "./context";
+import { User } from "./context";
 
+interface formatedQuestionInterface {
+  question: string;
+  options: string[];
+  correct: string;
+  difficulty: string;
+  lvl: number;
+}
 interface questionProp {
-  questions: question[];
+  questions: formatedQuestionInterface[];
   setPoints: React.Dispatch<React.SetStateAction<number>>;
   points: number;
   user: User;

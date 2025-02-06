@@ -29,7 +29,8 @@ function getTopK(arr: User[], k: number) {
   }
   return [...pq].reverse();
 }
-function LeaderBoard({ points, user, setUser }: lbInterface) {
+
+function LeaderBoard({ points, user }: lbInterface) {
   const [k, setK] = useState(3);
   const users = JSON.parse(localStorage.getItem("quizzo") || "[]");
 
