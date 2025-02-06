@@ -20,6 +20,7 @@ interface questionProp {
   setUser: React.Dispatch<React.SetStateAction<User>>;
   mode: number;
 }
+
 function Interface({
   questions,
   setPoints,

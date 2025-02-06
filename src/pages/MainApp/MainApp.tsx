@@ -1,13 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { question, User } from "../../components/context";
+import {
+  question,
+  User,
+  formatedQuestionInterface,
+} from "../../components/context";
 import img1 from "../../assets/undraw_exams_re_4ios.svg";
 import img2 from "../../assets/undraw_programming_re_kg9v.svg";
 import styles from "./MainApp.module.css";
 import Header from "../../components/Header";
 
 interface questionProp {
-  setQuestions: React.Dispatch<React.SetStateAction<question[]>>;
+  setQuestions: React.Dispatch<
+    React.SetStateAction<formatedQuestionInterface[]>
+  >;
   user: User;
   setUser: React.Dispatch<React.SetStateAction<User>>;
   setMode: React.Dispatch<React.SetStateAction<number>>;

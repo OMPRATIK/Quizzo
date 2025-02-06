@@ -7,11 +7,19 @@ import Register from "./components/Register";
 import MainApp from "./pages/MainApp/MainApp";
 import Interface from "./components/Interface";
 import { useState } from "react";
-import { question } from "./components/context";
+
 import { User } from "./components/context";
 
+interface formatedQuestionInterface {
+  question: string;
+  options: string[];
+  correct: string;
+  difficulty: string;
+  lvl: number;
+}
+
 function App() {
-  const [questions, setQuestions] = useState([] as question[]);
+  const [questions, setQuestions] = useState([] as formatedQuestionInterface[]);
   const [points, setPoints] = useState(0);
   const [user, setUser] = useState<User>({
     name: "",
